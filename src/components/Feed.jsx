@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Routes = () => {
+const Feed = () => {
   return (
     <div>
-      routes
+      Feed
     </div>
   )
 }
 
-export default Routes
+export default Feed
