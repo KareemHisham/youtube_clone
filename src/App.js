@@ -1,5 +1,4 @@
 import { MyRoutes, Navbar } from "./components";
-
 function App() {
   return (
     <>

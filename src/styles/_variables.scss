@@ -1,13 +1,21 @@
+/* Colors */
+$darkColor: #2c3333;
+$red: #f44336;
 /* Initial Style */
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Roboto", sans-serif !important;
-  }
-  a {
-    display: block;
-    text-decoration: none;
-  }
-/* Colors */  
+  box-sizing: border-box;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: $darkColor;
+}
+
+body {
+  font-family: "Roboto", sans-serif !important;
+}
+a {
+  display: block;
+  text-decoration: none;
+}
