@@ -1,6 +1,12 @@
-import { Routes, Route } from "react-router-dom";
+import { MyRoutes, Navbar } from "./components";
+
 function App() {
-  return <div>Hello World</div>;
+  return (
+    <>
+      <Navbar />
+      <MyRoutes />
+    </>
+  );
 }
 
 export default App;
