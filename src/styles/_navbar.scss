@@ -1,16 +1,15 @@
 nav {
   position: sticky;
   top: 0;
-  a {
-    flex-grow: 1;
-  }
+  background-color: $darkColor;
   form {
     padding: 2px;
     border-radius: 15px !important;
     input {
       border: 1px solid transparent;
       outline: none;
-      padding: 0 10px;
+      padding: 10px;
+      background-color: transparent;
     }
   }
 }

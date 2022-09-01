@@ -19,3 +19,19 @@ a {
   display: block;
   text-decoration: none;
 }
+
+/* SideBar */
+section.feed {
+  .sidebar-wrapper {
+    button {
+      transition: background .3s linear, color .3s linear;
+      &:hover {
+        background-color: $red !important;
+        opacity: 1 !important;
+        span.category-icon {
+          color: #fff !important;
+        }
+      }
+    }
+  }
+}
