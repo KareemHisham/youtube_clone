@@ -18,17 +18,19 @@ const VideoSlice = createSlice({
   name: "video",
   initialState: {
     selectedCategory: "New",
+    videos: [],
+    isLoading: false,
   },
   extraReducers: {
     [VideoFetching.pending]: (state, action) => {
-      console.log("pending");
+      state.isLoading = true;
     },
     [VideoFetching.fulfilled]: (state, action) => {
-      console.log("fulfilled");
-      console.log({ action });
+      state.isLoading = false;
+      state.videos = action.payload;
     },
     [VideoFetching.rejected]: (state, action) => {
-      console.log("rejected");
+      state.isLoading = true;
     },
   },
 });

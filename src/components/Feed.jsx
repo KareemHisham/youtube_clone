@@ -1,16 +1,18 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Footer, SideBar, Videos } from "./index";
+import { Footer, SideBar, Videos, Spinner } from "./index";
 import { VideoFetching } from "../store/videoSlice";
 const Feed = () => {
   const { selectedCategory } = useSelector((state) => state.VideoSlice);
+  const SelectedVideos = useSelector((state) => state.VideoSlice.videos.items);
+  const { isLoading } = useSelector((state) => state.VideoSlice);
   const [newCategory, setNewCategory] = useState(selectedCategory);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(VideoFetching(`search`));
-  }, [dispatch]);
+    dispatch(VideoFetching(`search?q=${newCategory}`));
+  }, [dispatch, newCategory]);
   return (
     <Stack component="section" className="feed" p={2} direction="row">
       <Box
@@ -31,11 +33,11 @@ const Feed = () => {
         <Typography
           variant="h4"
           fontWeight="bold"
-          sx={{ textTransform: "capitalize" }}
+          sx={{ textTransform: "capitalize", marginBottom: "10px" }}
         >
           {newCategory} <span style={{ color: "#f44336" }}>videos</span>
         </Typography>
-        <Videos />
+        {isLoading ? <Spinner /> : <Videos SelectedVideos={SelectedVideos} />}
       </Box>
     </Stack>
   );

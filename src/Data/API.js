@@ -1,7 +1,6 @@
-export const BaseURL = "https://youtube-v31.p.rapidapi.commm";
+export const BaseURL = "https://youtube-v31.p.rapidapi.com";
 export const options = {
   params: {
-    // relatedToVideoId: "7ghhRHRP6t4",
     part: "id,snippet",
     type: "video",
     maxResults: "50",
