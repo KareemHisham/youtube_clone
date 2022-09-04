@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { BaseURL, options } from "../Data/API";
 import axios from "axios";
+
 export const VideoFetching = createAsyncThunk(
   "video/fetch",
   async (url, thunkAPI) => {
@@ -22,14 +23,14 @@ const VideoSlice = createSlice({
     isLoading: false,
   },
   extraReducers: {
-    [VideoFetching.pending]: (state, action) => {
+    [VideoFetching.pending]: (state, _) => {
       state.isLoading = true;
     },
     [VideoFetching.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.videos = action.payload;
     },
-    [VideoFetching.rejected]: (state, action) => {
+    [VideoFetching.rejected]: (state, _) => {
       state.isLoading = true;
     },
   },

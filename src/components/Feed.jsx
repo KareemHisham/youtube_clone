@@ -11,7 +11,7 @@ const Feed = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(VideoFetching(`search?q=${newCategory}`));
+    dispatch(VideoFetching(`search?q=${newCategory}&part=id%2Csnippet&type=video&maxResults=100`));
   }, [dispatch, newCategory]);
   return (
     <Stack component="section" className="feed" p={2} direction="row">

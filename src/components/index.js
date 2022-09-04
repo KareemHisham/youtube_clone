@@ -15,3 +15,5 @@ export { default as Videos } from "./Videos";
 export { default as SearchBar } from "./mini-comp/SearchBar";
 export { default as SideBar } from "./mini-comp/SideBar";
 export { default as VideoCard } from "./mini-comp/VideoCard";
+export { default as ChannelInfo } from "./mini-comp/ChannelInfo";
+export { default as ChannelVideos } from "./mini-comp/ChannelVideos";
