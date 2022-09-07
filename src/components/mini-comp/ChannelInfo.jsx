@@ -5,12 +5,11 @@ const ChannelInfo = ({ items }) => {
   return (
     items &&
     items?.map((item) => {
-      console.log({item})
       return (
         <Box
           className="channel-info"
           style={{ marginBottom: "30px" }}
-          key={item.id}
+          key={item?.id}
         >
           <div
             className="channel-background"
@@ -27,7 +26,7 @@ const ChannelInfo = ({ items }) => {
             className="details"
             style={{
               textAlign: "center",
-              marginTop: "-50px"
+              marginTop: "-50px",
             }}
           >
             <Avatar

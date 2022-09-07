@@ -5,7 +5,18 @@ const ChannelVideos = ({ channelVideosFetch }) => {
     <Grid container spacing={2}>
       {channelVideosFetch &&
         channelVideosFetch?.map((item) => {
-          return <VideoCard videoDetail={item} key={item?.id?.videoId} />;
+          return (
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={3}
+              className="video-card"
+              key={item?.id?.videoId}
+            >
+              <VideoCard videoDetail={item} key={item?.id?.videoId} height="100%" />;
+            </Grid>
+          );
         })}
     </Grid>
   );

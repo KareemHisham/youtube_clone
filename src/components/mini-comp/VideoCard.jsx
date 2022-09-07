@@ -11,14 +11,14 @@ import {
 } from "../../Data/data";
 
 const VideoCard = ({
+  height,
   videoDetail: {
     id: { videoId },
     snippet,
   },
 }) => {
   return (
-    <Grid item xs={12} md={6} lg={3} className="video-card">
-      <Card sx={{ height: "100%", backgroundColor: "#0F0E0E" }}>
+      <Card sx={{ backgroundColor: "#0F0E0E", marginBottom: "10px", height: {height} }}>
         <Link to={videoId ? `video/${videoId}` : demoVideoUrl}>
           <CardMedia
             component="img"
@@ -53,7 +53,6 @@ const VideoCard = ({
           </Link>
         </CardContent>
       </Card>
-    </Grid>
   );
 };
 

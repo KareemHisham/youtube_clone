@@ -7,9 +7,11 @@ const Videos = ({ SelectedVideos }) => {
       <Grid container spacing={2}>
         {SelectedVideos?.map((video) => {
           return (
-            video?.id?.videoId && (
-              <VideoCard videoDetail={video} key={video.id.videoId} />
-            )
+            <Grid item xs={12} md={6} lg={3} className="video-card" key={video?.id?.videoId}>
+              {video?.id?.videoId && (
+                <VideoCard videoDetail={video} style={{height:"100%"}} height="100%" />
+              )}
+            </Grid>
           );
         })}
       </Grid>

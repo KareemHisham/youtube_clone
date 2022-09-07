@@ -13,7 +13,6 @@ const ChannelDetails = () => {
     (state) => state.ChannelSlice.channelVideos.items
   );
   const dispatch = useDispatch();
-  console.log({ ChannelVideosFetch });
 
   // useEffect
   useEffect(() => {
