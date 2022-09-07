@@ -24,7 +24,7 @@ const VideoCard = ({
         height: { height },
       }}
     >
-      <Link to={videoId ? `video/${videoId}` : demoVideoUrl}>
+      <Link to={videoId ? `/video/${videoId}` : demoVideoUrl} rel="noopener noreferrer">
         <CardMedia
           component="img"
           image={snippet?.thumbnails?.high?.url}
@@ -40,9 +40,10 @@ const VideoCard = ({
         <Link
           to={
             snippet?.channelId
-              ? `channel/${snippet?.channelId}`
+              ? `/channel/${snippet?.channelId}`
               : demoChannelUrl
           }
+          rel="noopener noreferrer"
         >
           <Typography
             variant="body2"
