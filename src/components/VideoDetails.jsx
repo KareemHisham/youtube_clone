@@ -1,20 +1,11 @@
 import { useParams } from "react-router-dom";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Stack } from "@mui/material";
 import { FetchVideoDetail, FetchRelatedVideos } from "../store/videoSlice";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect } from "react";
 import { Spinner, VideoDisplay, VideoCard } from "./index.js";
-import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 
-import { Link } from "react-router-dom";
-import {
-  demoChannelUrl,
-  demoVideoUrl,
-  demoChannelTitle,
-  demoVideoTitle,
-} from "../Data/data";
 const VideoDetails = () => {
   const { videoID } = useParams();
   const { videoDetail, isLoading, relatedVideos } = useSelector(
