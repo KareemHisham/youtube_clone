@@ -44,6 +44,23 @@ export const FetchRelatedVideos = createAsyncThunk(
   }
 );
 
+// Search Video Function
+export const SearchVideo = createAsyncThunk(
+  "video/search",
+  async (search, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
+    try {
+      const { data } = await axios.get(
+        `${BaseURL}/search?q=${search}&part=snippet&regionCode=US&maxResults=50&order=date`,
+        options
+      );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 const VideoSlice = createSlice({
   name: "video",
   initialState: {
@@ -51,7 +68,8 @@ const VideoSlice = createSlice({
     videos: [],
     isLoading: false,
     videoDetail: [],
-    relatedVideos: []
+    relatedVideos: [],
+    searchVideos: [],
   },
   extraReducers: {
     // VideoFetching Function
@@ -87,6 +105,18 @@ const VideoSlice = createSlice({
       state.relatedVideos = action.payload;
     },
     [FetchRelatedVideos.rejected]: (state, _) => {
+      state.isLoading = true;
+    },
+
+    // SearchVideo Function
+    [SearchVideo.pending]: (state, _) => {
+      state.isLoading = true;
+    },
+    [SearchVideo.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.searchVideos = action.payload;
+    },
+    [SearchVideo.rejected]: (state, _) => {
       state.isLoading = true;
     },
   },

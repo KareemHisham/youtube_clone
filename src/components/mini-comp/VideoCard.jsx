@@ -22,9 +22,15 @@ const VideoCard = ({
         backgroundColor: "#0F0E0E",
         marginBottom: "10px",
         height: { height },
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
       }}
     >
-      <Link to={videoId ? `/video/${videoId}` : demoVideoUrl} rel="noopener noreferrer">
+      <Link
+        to={videoId ? `/video/${videoId}` : demoVideoUrl}
+        rel="noopener noreferrer"
+      >
         <CardMedia
           component="img"
           image={snippet?.thumbnails?.high?.url}
