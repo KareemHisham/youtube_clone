@@ -24,9 +24,10 @@ const SearchTerm = () => {
   return (
     <Stack p={2} component="section" className="search-term">
       <Grid container spacing={2}>
-        {items?.map((item) => {
+        {items?.map((item, idx) => {
+          console.log(item)
           return (
-            <Grid item xs={12} md={4} lg={3} key={item?.id?.videoId}>
+            <Grid item xs={12} md={4} lg={3} key={idx}>
               <VideoCard videoDetail={item} height="100%" />;
             </Grid>
           );

@@ -26,6 +26,7 @@ const VideoCard = ({
         flexDirection: "column",
         justifyContent: "space-between",
       }}
+      key={videoId}
     >
       <Link
         to={videoId ? `/video/${videoId}` : demoVideoUrl}
