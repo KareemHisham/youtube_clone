@@ -1,9 +1,10 @@
-import { MyRoutes, Navbar } from "./components";
+import { MyRoutes, Navbar, Footer } from "./components";
 function App() {
   return (
     <>
       <Navbar />
       <MyRoutes />
+      <Footer />
     </>
   );
 }

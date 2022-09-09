@@ -1,7 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Footer, SideBar, Videos, Spinner } from "./index";
+import { SideBar, Videos, Spinner } from "./index";
 import { VideoFetching } from "../store/videoSlice";
 const Feed = () => {
   const { selectedCategory } = useSelector((state) => state.VideoSlice);
@@ -11,18 +11,33 @@ const Feed = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(VideoFetching(`search?q=${newCategory}&part=id%2Csnippet&type=video&maxResults=100`));
+    dispatch(
+      VideoFetching(
+        `search?q=${newCategory}&part=id%2Csnippet&type=video&maxResults=100`
+      )
+    );
   }, [dispatch, newCategory]);
   return (
-    <Stack component="section" className="feed" p={2} direction="row">
+    <Stack
+      component="section"
+      className="feed"
+      p={2}
+      sx={{ flexDirection: { xs: "column", md: "row" } }}
+    >
       <Box
         component="section"
         className="sidebar"
-        sx={{ borderRight: "1px solid #eee6", flexBasis: "220px" }}
+        sx={{
+          borderRight: "1px solid #eee6",
+          flexBasis: { xs: "100%", md: "220px" },
+          marginBottom: { xs: "20px", md: "0" },
+          height: "100%",
+          position: { xs: "static", md: "sticky" },
+          top: { xs: "0", md: "90px" },
+        }}
         px={2}
       >
         <SideBar newCategory={newCategory} setNewCategory={setNewCategory} />
-        <Footer />
       </Box>
       <Box
         component="section"

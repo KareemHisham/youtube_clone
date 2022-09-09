@@ -4,9 +4,11 @@ import { categories } from "../../Data/data";
 const SideBar = ({ newCategory, setNewCategory }) => {
   return (
     <Stack
+      direction="row"
       sx={{
-        flexDirection: { sx: "row" },
-        alignItems: "center",
+        overflowY: "auto",
+        height: { sx: "auto", md: "95%" },
+        flexDirection: { md: "column" },
       }}
       className="sidebar-wrapper"
     >
@@ -15,6 +17,9 @@ const SideBar = ({ newCategory, setNewCategory }) => {
           <Button
             variant="outlined"
             key={category.name}
+            sx={{
+              minWidth: "unset",
+            }}
             style={{
               marginBottom: "20px",
               borderColor: "transparent",
