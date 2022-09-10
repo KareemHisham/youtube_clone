@@ -1,19 +1,19 @@
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { SearchVideo } from "../store/videoSlice";
-import { useParams } from "react-router-dom";
 import { Stack } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { VideoCard, Spinner } from "./index";
 
 const SearchTerm = () => {
+  const { searchTerm } = useParams();
   const dispatch = useDispatch();
   const {
     searchVideos: { items },
     isLoading,
   } = useSelector((state) => state.VideoSlice);
 
-  const { searchTerm } = useParams();
 
   useEffect(() => {
     dispatch(SearchVideo(searchTerm));

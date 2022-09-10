@@ -1,17 +1,17 @@
 import { useParams } from "react-router-dom";
-import { Stack } from "@mui/material";
-import { FetchVideoDetail, FetchRelatedVideos } from "../store/videoSlice";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect } from "react";
+import { FetchVideoDetail, FetchRelatedVideos } from "../store/videoSlice";
 import { Spinner, VideoDisplay, VideoCard } from "./index.js";
+import { Stack } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 
 const VideoDetails = () => {
   const { videoID } = useParams();
+  const dispatch = useDispatch();
   const { videoDetail, isLoading, relatedVideos } = useSelector(
     (state) => state.VideoSlice
   );
-  const dispatch = useDispatch();
   const { items } = videoDetail;
   const relatedVideo = relatedVideos.items;
 

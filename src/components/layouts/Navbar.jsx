@@ -14,7 +14,7 @@ const Navbar = () => {
         zIndex: "999",
       }}
     >
-      <Link to="/" className="brand-img" rel="noopener noreferrer">
+      <Link to="/youtube_clone" className="brand-img" rel="noopener noreferrer">
         <Avatar src={logo} alt="brand-img"></Avatar>
       </Link>
       <SearchBar />

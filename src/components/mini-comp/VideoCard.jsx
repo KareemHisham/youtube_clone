@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { Link } from "react-router-dom";
 
 import {
   demoChannelUrl,
@@ -28,7 +28,7 @@ const VideoCard = ({
       }}
     >
       <Link
-        to={videoId ? `/video/${videoId}` : demoVideoUrl}
+        to={videoId ? `/youtube_clone/video/${videoId}` : demoVideoUrl}
         rel="noopener noreferrer"
       >
         <CardMedia
@@ -46,7 +46,7 @@ const VideoCard = ({
         <Link
           to={
             snippet?.channelId
-              ? `/channel/${snippet?.channelId}`
+              ? `/youtube_clone/channel/${snippet?.channelId}`
               : demoChannelUrl
           }
           rel="noopener noreferrer"

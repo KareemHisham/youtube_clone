@@ -1,6 +1,7 @@
 import { Box, Avatar } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import millify from "millify";
+
 const ChannelInfo = ({ items }) => {
   return (
     items &&

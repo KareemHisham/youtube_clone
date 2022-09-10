@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { ChannelFetching, ChannelVideoFetching } from "../store/channelSlice";
 import { useParams } from "react-router-dom";
-import { Spinner, ChannelInfo, ChannelVideos } from "./index";
+import { ChannelFetching, ChannelVideoFetching } from "../store/channelSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { Stack, Box } from "@mui/material";
+import { Spinner, ChannelInfo, ChannelVideos } from "./index";
 
 const ChannelDetails = () => {
   const { channelID } = useParams();
+  const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.ChannelSlice);
   const { items } = useSelector((state) => state.ChannelSlice.channelInfo);
   const ChannelVideosFetch = useSelector(
     (state) => state.ChannelSlice.channelVideos.items
   );
-  const dispatch = useDispatch();
 
   // useEffect
   useEffect(() => {

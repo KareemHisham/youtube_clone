@@ -1,14 +1,15 @@
-import { Box, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { SideBar, Videos, Spinner } from "./index";
 import { VideoFetching } from "../store/videoSlice";
+import { SideBar, Videos, Spinner } from "./index";
+import { Box, Stack, Typography } from "@mui/material";
+
 const Feed = () => {
+  const dispatch = useDispatch();
   const { selectedCategory } = useSelector((state) => state.VideoSlice);
   const SelectedVideos = useSelector((state) => state.VideoSlice.videos.items);
   const { isLoading } = useSelector((state) => state.VideoSlice);
   const [newCategory, setNewCategory] = useState(selectedCategory);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(
@@ -17,6 +18,7 @@ const Feed = () => {
       )
     );
   }, [dispatch, newCategory]);
+  
   return (
     <Stack
       component="section"
