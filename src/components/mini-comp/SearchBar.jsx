@@ -10,7 +10,7 @@ const SearchBar = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchTerm) {
-      navigate(`search/${searchTerm}`);
+      navigate(`/youtube_clone/search/${searchTerm}`);
     }
   };
 
